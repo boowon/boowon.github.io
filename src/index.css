@@ -24,20 +24,33 @@ nav >h1{
 #Svt-mbrs{
     width: 100%;
     margin: 20px auto 0 auto;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 80px);
     display: flex;
-    justify-content:space-evenly;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow: scroll;
 }
 
 .mbr{
-    width: 25%;
-    height: auto;
-    overflow: hidden;
-    margin: 10px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content:space-evenly;
+    margin: auto 20px;
+    height:calc(100vh - 120px);
+    max-height: 550px ;
     border-radius: 5px;
-    padding-top: 10px;
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+}
+
+.isbias{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 10;
+    background-color: white;
+    padding: 2px 5px;
+    border-radius: 6px;
+    font-weight: bold;
 }
 .mbr:hover{
     box-shadow: 0 0 10px 0 goldenrod;
@@ -48,14 +61,13 @@ nav >h1{
 
 .mbr img{
     display: block;
-    margin: 4px auto;
-    border-radius: 5px;
-    width: 20vw;
-    height: calc(20vw * 1.5);
+    border-radius: 5px 5px 0 0;
+    width: 18vw;
+    height: calc(18vw * 1.5);
     object-fit: cover;
 }
 
-.mbr h1{
+h1{
     display: inline;
     margin: 20px 0 5px 10px;
     font-size: calc(1rem + 1vw);
@@ -68,17 +80,27 @@ nav >h1{
     color: gray;
 }
 
-.mbr h2{
+h2{
     font-weight: bold;
     margin: 0 0 10px 10px;
     font-size: calc(0.5rem + 1vw);
 }
 
 @media screen and (max-width: 479px){
+    #Svt-mbrs{
+        overflow: auto;
+        height: auto;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
     .mbr{
-        width: 35%;
+        width: 40%;
+        height: auto;
+        margin: 20px 10px;
+        padding: 4px 5px;
     }
     .mbr img{
+        margin: 5px auto;
         width: 30vw;
         height: calc(30vw * 1.5);
     }

@@ -4,6 +4,7 @@ import '../index.css';
 export default function Mbr(props) {
     return(
         <div className="mbr">
+            {props.bias && <div className="isbias">My BIAS!</div>}
             <img loading="lazy" src={props.img} alt={props.name}/>
             <h1>{props.name}</h1>
             <h3>({props.age})</h3>
